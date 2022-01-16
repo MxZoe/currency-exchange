@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title></title>
+  <title>Currency Exchange</title>
 </head>
 <body>
-  
+  <div class="top">
+    <h1>Currency Exchange</h1>
+  </div>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+            <input type="text" id="usd" class="form-control">
+            <label for="usd">USD</label>
+          </div>
+          <div class="col-sm-3">
+            <p>to</p>
+          </div>
+          <div class="col-sm-3">
+            <select id="exchange">
+              <option value="EUR">Euro</option>
+              <option value="GBP">Pound Sterling</option>
+              <option value="INR">Indian Rupee</option>
+              <option value="NZD">New Zealand Dollar</option>
+              <option value="CAD">Canadian Dollar</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <button type="submit" id="submitButton" class="btn btn-primary">Exchange</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div id="display">
+      <p>$<span id="usdNumber"> USD</span>  is <span id="exchangeNumber"></span></p>
+    </div>
+  </div>
 </body>
 </html>
