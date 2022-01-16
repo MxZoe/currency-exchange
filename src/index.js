@@ -41,12 +41,11 @@ function calculateExchange(response, currency, amount){
 
 //UI logic
 $(document).ready(function(){
-  
   $("#formOne").submit(function(event){
-    event.preventDefault();
+    
     let amount = $("#usd").val();
     let currency = $("#exchange").val();
-    ExchangeService.getService(`${currency}`)
+    ExchangeService.getService(`GBP`)
     .then(function(exchangeResponse){
       if (exchangeResponse instanceof Error) {
         throw Error(`Unsplash API error: ${exchangeResponse.message}`);
@@ -59,5 +58,6 @@ $(document).ready(function(){
     .catch(function(error) {
       displayErrors(error.message)
     });
+    event.preventDefault();
   });
 });
