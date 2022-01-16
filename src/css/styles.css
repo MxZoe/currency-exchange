@@ -1,0 +1,17 @@
+#top{
+  text-align: center;
+  background-color: lightblue;
+  padding: 3%;
+  border-bottom: 2px solid darkblue;
+}
+
+#formOne{
+  text-align: center;
+  margin-top: 3%;
+}
+
+#display{
+  text-align: center;
+  margin:3%;
+  border: 2px solid darkblue;
+}

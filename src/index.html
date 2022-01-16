@@ -4,21 +4,24 @@
   <title>Currency Exchange</title>
 </head>
 <body>
-  <div class="top">
+  <div id="top">
     <h1>Currency Exchange</h1>
   </div>
   <div class="container">
-    <form if="formOne">
+    <form id="formOne">
       <div class="form-group">
         <div class="row">
+          <div class="col-sm-2"></div>
           <div class="col-sm-3">
             <label for="usd">USD</label>
             <input type="text" id="usd" class="form-control">
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-1" id="to">
+            <br>
             <p>to</p>
           </div>
           <div class="col-sm-3">
+            <br>
             <select id="exchange">
               <option value="EUR">Euro</option>
               <option value="GBP">Pound Sterling</option>
@@ -28,6 +31,7 @@
             </select>
           </div>
           <div class="col-sm-3">
+            <br>
             <button type="submit" id="submitButton" class="btn btn-primary">Exchange</button>
           </div>
         </div>

@@ -7,6 +7,7 @@ import ExchangeService from "./exchange-service";
 //business logic
 
 function displayExchange(currency, intialAmount, exchangedAmount){
+  exchangedAmount = parseFloat(exchangedAmount).toFixed(2);
   $("#display").html(`$${intialAmount} USD is ${exchangedAmount} ${currency}`)
 }
 
@@ -34,9 +35,7 @@ function calculateExchange(response, currency, amount){
       break;
   }
 
-  let percentage = 1/rate;
-  let exchangedAmount = amount * percentage;
-  return exchangedAmount;
+  return amount * rate;
 }
 
 //UI logic
@@ -48,10 +47,10 @@ $(document).ready(function(){
     ExchangeService.getService(`GBP`)
     .then(function(exchangeResponse){
       if (exchangeResponse instanceof Error) {
-        throw Error(`Unsplash API error: ${exchangeResponse.message}`);
+        throw Error(`Exchange API error: ${exchangeResponse.message}`);
       }
       console.log(exchangeResponse);
-      const exchangedAmount = calculateExchange(exchangeResponse, currency, amount);
+      let exchangedAmount = calculateExchange(exchangeResponse, currency, amount);
       
       displayExchange(currency, amount, exchangedAmount);
     })
