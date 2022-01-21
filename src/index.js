@@ -33,9 +33,14 @@ function calculateExchange(response, currency, amount){
     case "CAD":
       rate = `${response.conversion_rates.CAD}`
       break;
+    default:
+      rate = "Something went wrong! We could not get the currency exchange rate from the api!";
   }
-
-  return amount * rate;
+  if(rate === NaN){
+    return rate;
+  } else{
+    return amount * rate;
+  }
 }
 
 //UI logic
